@@ -1,0 +1,28 @@
+<div *ngIf="show" class="text-center mt">
+    <b style="color: #0a4275;">No Review Available For This Product</b>
+    <br>
+    <a   routerLink="/askreview" mat-raised-button color="primary" class="mt-5">Ask Review</a>
+</div>  
+<div class="bootstrap-wrapper">
+    <div class="container mt1">
+        <div class="container1 ">
+            <table *ngIf="!show"  class="table">
+               <thead>
+                <tr>
+                  <th scope="col">Review Description</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Username</th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor="let item of list">
+                    <td *ngIf="item.state=='approved'">{{item.review}}</td>
+                    <td *ngIf="item.state=='approved'">{{item.rating}}</td>
+                    <td *ngIf="item.state=='approved'">{{item.username}}</td>
+                </tr>
+               </tbody>
+            </table>
+        </div>
+        <a routerLink="/search" mat-raised-button color="primary" class="text-center mt">Back</a>
+    </div>
+</div>

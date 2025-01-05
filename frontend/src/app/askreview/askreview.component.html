@@ -1,0 +1,25 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-5 offset-md-2">
+                <h1 class="text-center">Ask For Review</h1>
+                <form [formGroup]="askreview" (ngSubmit)="Askreview()">
+                    <!-- askReview details -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example1">ProductName</label>
+                      <input type="text" formControlName="productname" class="form-control" required />
+                      <label class="form-label" for="form2Example1">Username</label>
+                      <input type="text" formControlName="username" class="form-control" required />
+                      <label class="form-label" for="form2Example1">Date</label>
+                      <input type="date" formControlName="date" class="form-control" required />
+                      
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" [disabled]="askreview.invalid"class="btn btn-primary btn-block mb-4">Ask Review</button>   
+                </form>
+            </div>
+        </div>
+        <!--back button-->
+        <a routerLink="/search" mat-raised-button color="primary" class="text-center mt-3">Back</a>
+    </div>
+</div>

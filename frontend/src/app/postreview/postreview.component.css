@@ -1,0 +1,12 @@
+/* Responsive style for small screen */
+@media (max-width:767px) {
+    .col-md-5.offset-md-3{
+        width:100;
+        margin-bottom: 5rem;
+        margin-left: 0;
+
+    }
+    .container{
+        margin-bottom: 4rem;
+    }
+}

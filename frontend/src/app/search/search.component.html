@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+      <h1 class="text-center"  style="color: #0a4275;">Search Product !!</h1>
+        <form [formGroup]="search" (ngSubmit)="Search()">
+            <table>
+                <thead>
+                    <tr>
+                      <th style="width:50%;"  scope="col"><input type="text" formControlName="search" class="form-control" placeholder="search Product" required /></th>
+                      <th scope="col"><button type="submit"  [disabled]="search.invalid"  mat-raised-button color="primary">Search</button></th>
+                    </tr>
+                </thead>
+            </table>  
+        </form> 
+      <a *ngIf="userservice.AdminLogin()" mat-raised-button color="primary" class="align" routerLink="/approvereview">Approve Review</a>
+        <!--table for product details-->  
+        <div class="container1 mt-3">
+            <table *ngIf="product" class="table">
+               <thead>
+                <tr>
+                  <th scope="col">ProductName</th>
+                  <th scope="col">ProductBrand</th>
+                  <th scope="col">Code</th>
+                  <th scope="col">Average Rating</th>
+                  <th scope="col">No.of Reviews</th>
+                  <th scope="col"> </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of product" >
+                  <td>{{item.productname}}</td>
+                  <td>{{item.productbrand}}</td>
+                  <td>{{item.productcode}}</td>
+                  <td>{{item.averageRating}}</td>
+                  <td>{{item.review.length}}</td>
+                  <td> <button *ngIf="product!=null" routerLink="/postreview/{{item.productId}}" type="button"  mat-raised-button color="primary"class="me-3">Post Review</button>&nbsp;
+                    <button  *ngIf="product!=null" routerLink="/review/{{item.productId}}" type="button"  mat-raised-button color="primary" class="me-3">View Review</button>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div *ngIf="show" class="text-center mt">
+          <b style="color: #0a4275;">No Product Available For this Search</b>
+        </div> 
+    
+    </div>
+</div>
+

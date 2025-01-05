@@ -1,0 +1,25 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-5 offset-md-3">
+                <h1 class="text-center">Review Details</h1>
+                <form [formGroup]="postreview" (ngSubmit)="Review()">
+                    <!-- registration details -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example1">Review</label>
+                      <input type="text" formControlName="review" class="form-control" placeholder="Review Description" required />
+                      <label class="form-label" for="form2Example1">Rating</label>
+                      <input type="text" formControlName="rating" class="form-control" placeholder="rating from 1 to 5" required />
+                      <label class="form-label" for="form2Example1">Username</label>
+                      <input type="text" formControlName="username" class="form-control" placeholder="your username" required /> 
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" [disabled]="postreview.invalid"class="btn btn-primary btn-block mb-4">Post Review</button>
+                    
+                    
+                </form>
+            </div>
+        </div>
+        <button  routerLink="/search" class="btn btn-primary btn-block mb-4  mt-2">Back</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.container1{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+/*Responsive */
+@media (max-width: 767px){
+    .container{
+        margin-bottom: 4rem;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .container1{
+        overflow:auto;
+        margin-bottom: 4rem;
+    }
+    table{
+        white-space: nowrap;
+        width: 100%;
+
+    }
+}

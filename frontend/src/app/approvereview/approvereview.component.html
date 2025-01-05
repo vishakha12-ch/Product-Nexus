@@ -1,0 +1,35 @@
+<!--this page display the reviews of the product-->
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="container1 ">
+            <table *ngIf="list"  class="table">
+               <thead>
+                <tr>
+                  <th scope="col">Review-Id</th>
+                  <th scope="col">ProductName</th>
+                  <th scope="col">Review </th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">State</th>
+                  <th cope="col"> </th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor="let item of list">
+                    <td >{{item.reviewId}}</td>
+                    <td>{{item.product.productname}}</td>
+                    <td >{{item.review}}</td>
+                    <td >{{item.rating}}</td>
+                    <td >{{item.username}}</td>
+                    <td>{{item.state}}</td>
+                    <td>
+                        <button  *ngIf="item.state!='approved'" (click)="Approve(item.reviewId)" type="submit"  mat-raised-button  color="primary">Approve</button>
+                    </td>
+                </tr>
+               </tbody>
+            </table>
+        </div>
+        <!--back button-->
+        <button  routerLink="/search" class="btn btn-primary btn-block mb-4 text-center mt-2">Back</button>
+    </div>
+</div>
